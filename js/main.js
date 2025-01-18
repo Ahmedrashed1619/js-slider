@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let currentIndex = 0;
   let autoPlayInterval;
-  const autoPlayDelay = 7000; // 7 seconds
+  const autoPlayDelay = 4000; // 4 seconds
 
   function updateSlider(index) {
       // Remove all classes first

@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap");
 
+:root {
+  --mainColor: #2D4F41;
+  --secondColor: #D19D4E;
+  --thirdColor: #B59650;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +15,6 @@
 body {
   font-family: "Almarai", serif;
   /* background-color: #f5f5f5; */
-  /* direction: rtl; */
 }
 
 .slider-container {
@@ -46,7 +51,7 @@ body {
   opacity: 0;
   transition: opacity 0.75s ease-in-out;
   visibility: hidden;
-  padding-inline-end: 2rem;
+  padding-inline-end: 1.5rem;
 }
 
 .content.active {
@@ -55,21 +60,22 @@ body {
 }
 
 .content h2 {
-  color: #2D4F41;
-  font-size: 2.5rem;
+  color: var(--mainColor);
+  font-size: 2.25rem;
   margin-bottom: 1.5rem;
 }
 
 .content p {
   color: #999;
-  line-height: 2;
-  font-size: 1.2rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
   font-weight: 400;
 }
 
 .content p strong {
-  color: black;
+  color: var(--mainColor);
   font-weight: 900;
+  font-size: 1.15rem;
 }
 
 .slider-section {
@@ -116,8 +122,7 @@ body {
   pointer-events: auto;
   height: 425px;
   /* width: 350px; */
-  border: 5px solid #D19D4E;
-  /* background-color: #D19D4E; */
+  border: 5px solid var(--secondColor);
   z-index: 3;
   transform: translateX(-5%) scale(1);
 }
@@ -154,6 +159,7 @@ body {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  transition: all 0.5s ease-in-out;
 }
 
 .dots {
@@ -165,21 +171,21 @@ body {
   width: 0.9rem;
   height: 0.9rem;
   border-radius: 50%;
-  border: 2px solid #2D4F41;
+  border: 2px solid var(--mainColor);
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .dot.active {
-  background: #B59650;
-  border-color: #B59650;
+  background: var(--thirdColor);
+  border-color: var(--thirdColor);
   transform: scale(1.5);
 }
 
 @media (max-width: 1400px) {
   .content h2 {
-    font-size: 2.35rem;
+    font-size: 2.15rem;
   }
 
   .slide {
@@ -189,26 +195,31 @@ body {
 
   .slide.active {
     height: 400px;
-    transform: translateX(-5%) scale(1);
+    transform: translateX(-10%) scale(1);
   }
   
   .slide.prev {
-    transform: translateX(185%) scale(0.8, 1);
+    transform: translateX(180%) scale(0.8, 1);
   }
   
   .slide.next {
-    transform: translateX(95%) scale(0.8, 1);
+    transform: translateX(90%) scale(0.8, 1);
   }
 }
 
 @media (max-width: 1200px) {
   .content h2 {
-    font-size: 2.15rem;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   .content p {
-    line-height: 1.75;
-    font-size: 1.1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .content p strong {
+    font-size: 1.05rem;
   }
 
   .slide {
@@ -231,26 +242,25 @@ body {
 
 @media (max-width: 992px) {
 
-  /* .slider-container {
-    min-height: 500px;
-  } */
+  .slider-container {
+    min-height: 550px;
+  }
 
-  /* .slider-wrapper {
-    align-items: center;
-  } */
+  .slider-wrapper {
+    height: 450px;
+  }
 
   .content {
-    padding-inline-end: 1.5rem;
+    padding-inline-end: 1.25rem;
   }
 
   .content h2 {
-    font-size: 1.7rem;
-    margin-bottom: 1.15rem;
+    font-size: 1.6rem;
+    margin-bottom: 1.1rem;
   }
 
   .content p {
-    line-height: 1.5;
-    font-size: 1rem;
+    line-height: 1.4;
   }
 
   .slide {
@@ -260,11 +270,19 @@ body {
 
   .slide.active {
     height: 350px;
-    border: 4px solid #D19D4E;
+    border: 4px solid var(--secondColor);
+    transform: translateX(-15%) scale(1);
+  }
+  
+  .slide.prev {
+    transform: translateX(175%) scale(0.8, 1);
+  }
+  
+  .slide.next {
+    transform: translateX(85%) scale(0.8, 1);
   }
 
   .navigation {
-    bottom: 30px;
     left: 40%;
   }
 }
@@ -282,12 +300,16 @@ body {
   }
 
   .content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.9rem;
   }
 
   .content p {
     font-size: 0.95rem;
+  }
+
+  .content p strong {
+    font-size: 1rem;
   }
   
   .slider-section {
@@ -305,10 +327,18 @@ body {
 
   .slide.active {
     height: 300px;
+    transform: translateX(-5%) scale(1);
+  }
+  
+  .slide.prev {
+    transform: translateX(185%) scale(0.8, 1);
+  }
+  
+  .slide.next {
+    transform: translateX(95%) scale(0.8, 1);
   }
 
   .navigation {
-    bottom: 40px;
     left: 50%;
   }
 
@@ -333,14 +363,19 @@ body {
     font-size: 0.9rem;
   }
 
+  .content p strong {
+    font-size: 0.95rem;
+  }
+
   .slide {
     height: 240px;
     width: 225px;
   }
 
   .slide.active {
-    height: 300px;
+    height: 310px;
   }
+
   .dots {
     gap: 0.75rem;
   }
@@ -371,17 +406,21 @@ body {
     font-size: 0.85rem;
   }
 
+  .content p strong {
+    font-size: 0.9rem;
+  }
+
   .slider-wrapper {
     height: 375px;
   }
 
   .slide {
-    height: 200px;
-    width: 175px;
+    height: 230px;
+    width: 170px;
   }
 
   .slide.active {
-    height: 240px;
+    height: 290px;
   }
 }
 
@@ -389,18 +428,23 @@ body {
   .slider-container {
     min-height: 425px;
     border-radius: 35px;
+    gap: 1.5rem;
   }
 
   .content {
-    padding-inline-end: 0.5rem;
+    padding-inline-end: 0.25rem;
   }
 
   .content h2 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .content p {
     line-height: 1.15;
+    font-size: 0.7rem;
+  }
+
+  .content p strong {
     font-size: 0.75rem;
   }
 
@@ -409,21 +453,21 @@ body {
   }
 
   .slide {
-    height: 150px;
+    height: 180px;
     width: 140px;
   }
 
   .slide.active {
-    height: 200px;
+    height: 240px;
   }
   
   .dots {
-    gap: 0.75rem;
+    gap: 0.6rem;
   }
   
   .dot {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.65rem;
+    height: 0.65rem;
   }
 }
 
@@ -442,7 +486,6 @@ body {
   }
   
   .content p {
-    font-size: 0.7rem;
     line-height: 1;
   }
 
@@ -451,12 +494,16 @@ body {
   }
 
   .slide {
-    height: 140px;
+    height: 175px;
     width: 120px;
   }
 
   .slide.active {
-    height: 180px;
+    height: 220px;
+  }
+
+  .navigation {
+    bottom: 50px;
   }
 }
 
@@ -479,15 +526,15 @@ body {
   }
 
   .slide {
-    height: 130px;
+    height: 150px;
     width: 110px;
   }
 
   .slide.active {
-    height: 160px;
+    height: 200px;
   }
 
   .navigation {
-    bottom: 30px;
+    bottom: 40px;
   }
 }
