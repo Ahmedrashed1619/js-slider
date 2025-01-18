@@ -148,7 +148,7 @@ body {
 
 .navigation {
   position: absolute;
-  bottom: 40px;
+  bottom: 50px;
   left: 30%;
   transform: translateX(-50%);
   display: flex;
@@ -216,7 +216,7 @@ body {
   }
 
   .navigation {
-    bottom: 30px;
+    bottom: 40px;
   }
   
   .dot {
@@ -264,7 +264,7 @@ body {
   }
 
   .navigation {
-    bottom: 20px;
+    bottom: 30px;
     left: 40%;
   }
 }
